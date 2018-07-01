@@ -5,8 +5,8 @@ The project builds using
   Microsoft .NET Framework
   Version 4.7.03056
 
-You may need to install .Net 4.7.2.  This version of .Net ships with Windows 10 April 2018 Update version 1803 (Build 17134.x)
-A copy of the SDK and redistributable can be found in Net-4.7.2 folder.
+You will need to install .Net 4.7.2 SDK.  Before opening the solution.  This version of .Net ships with Windows 10 April 2018 Update 
+version 1803 (Build 17134.x).  A copy of the SDK and redistributable can be found in Net-4.7.2 folder.
 
 Project was inspired by WinDirStat. Unfortunatly, I have not been able to find any copy of WinDirStat that builds master branch.
 I have also tried getting zip down load from Source Forge.  The zip is missing ..\common\platform.cpp file and has other issues.
