@@ -36,6 +36,13 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     UNREFERENCED_PARAMETER(lpCmdLine);
 
     DWORD dwErr;
+    // Supposed to start COM before running shell functions.
+    // Using shell functions to pick folders.  May use it to find folder sizes.
+    HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED);
+    if (FAILED(hr))
+    {
+        return FALSE;
+    }
 
     // Initialize global strings
     LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
@@ -73,6 +80,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
             DispatchMessage(&msg);
         }
     }
+
+    CoUninitialize();
 
     return (int) msg.wParam;
 }
