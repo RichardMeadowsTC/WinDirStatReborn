@@ -162,9 +162,9 @@ END
 // Bitmap
 //
 
-IDB_CLOSED              BITMAP                  "C:\\Users\\rmeadows\\Source\\Repos\\WinDirStatReborn\\AsDesktopApp\\bitmap1.bmp"
+IDB_CLOSED              BITMAP                  "FileClosed.bmp"
 
-IDB_OPEN                BITMAP                  "bitmap2.bmp"
+IDB_OPEN                BITMAP                  "FileOpen.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////

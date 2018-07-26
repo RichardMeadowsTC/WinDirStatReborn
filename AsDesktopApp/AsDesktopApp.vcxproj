@@ -185,8 +185,8 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="AsDesktopApp.ico" />
-    <Image Include="bitmap1.bmp" />
-    <Image Include="bitmap2.bmp" />
+    <Image Include="FileClosed.bmp" />
+    <Image Include="FileOpen.bmp" />
     <Image Include="small.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

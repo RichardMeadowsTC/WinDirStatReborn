@@ -93,10 +93,10 @@
     <Image Include="AsDesktopApp.ico">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="bitmap1.bmp">
+    <Image Include="FileClosed.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="bitmap2.bmp">
+    <Image Include="FileOpen.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
