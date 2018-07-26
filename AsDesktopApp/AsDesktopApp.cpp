@@ -235,7 +235,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
                 DestroyWindow(hWnd);
                 break;
             case IDM_REFRESH:
-                treeView.SortItems(TVI_ROOT);
+                treeView.RepaintWindow();
                 break;
             case ID_FILE_NEWSEARCH:
                 StartNewQuery(hWndMain);
