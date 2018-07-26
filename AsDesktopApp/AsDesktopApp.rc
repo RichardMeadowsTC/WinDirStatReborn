@@ -1,4 +1,4 @@
-//Microsoft Visual C++ generated resource script.
+// Microsoft Visual C++ generated resource script.
 //
 #include "resource.h"
 
@@ -13,11 +13,16 @@
 #define APSTUDIO_HIDDEN_SYMBOLS
 #include "windows.h"
 #undef APSTUDIO_HIDDEN_SYMBOLS
+
 /////////////////////////////////////////////////////////////////////////////
 #undef APSTUDIO_READONLY_SYMBOLS
 
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
-LANGUAGE 9, 1
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -26,9 +31,10 @@ LANGUAGE 9, 1
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
+IDI_ASDESKTOPAPP        ICON                    "AsDesktopApp.ico"
 
-IDI_ASDESKTOPAPP       ICON         "AsDesktopApp.ico"
-IDI_SMALL               ICON         "small.ico"
+IDI_SMALL               ICON                    "small.ico"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -39,11 +45,12 @@ IDC_ASDESKTOPAPP MENU
 BEGIN
     POPUP "&File"
     BEGIN
-        MENUITEM "E&xit",                IDM_EXIT
+        MENUITEM "&New Search",                 ID_FILE_NEWSEARCH
+        MENUITEM "E&xit",                       IDM_EXIT
     END
     POPUP "&Help"
     BEGIN
-        MENUITEM "&About ...",           IDM_ABOUT
+        MENUITEM "&About ...",                  IDM_ABOUT
     END
 END
 
@@ -55,8 +62,9 @@ END
 
 IDC_ASDESKTOPAPP ACCELERATORS
 BEGIN
-    "?",            IDM_ABOUT,              ASCII,  ALT
-    "/",            IDM_ABOUT,              ASCII,  ALT
+    "/",            IDM_ABOUT,              ASCII,  ALT, NOINVERT
+    "?",            IDM_ABOUT,              ASCII,  ALT, NOINVERT
+    VK_F5,          IDM_REFRESH,            VIRTKEY, NOINVERT
 END
 
 
@@ -68,13 +76,28 @@ END
 IDD_ABOUTBOX DIALOGEX 0, 0, 170, 62
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "About AsDesktopApp"
-FONT 8, "MS Shell Dlg"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
     ICON            IDR_MAINFRAME,IDC_STATIC,14,14,21,20
     LTEXT           "AsDesktopApp, Version 1.0",IDC_STATIC,42,14,114,8,SS_NOPREFIX
     LTEXT           "Copyright (C) 2018",IDC_STATIC,42,26,114,8
     DEFPUSHBUTTON   "OK",IDOK,113,41,50,14,WS_GROUP
 END
+
+IDD_SELECT_DIRECTORIES DIALOGEX 0, 0, 509, 245
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Directories"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_E_ADD_FOLDER,62,182,282,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Add ...",IDC_B_ADD_FOLDER,353,182,50,14
+    DEFPUSHBUTTON   "OK",IDOK,356,224,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,452,224,50,14
+    CONTROL         "",IDC_LIST_FOLDERS,"SysListView32",LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,27,27,437,146
+    LTEXT           "Folder:",IDC_STATIC,30,185,24,8
+    GROUPBOX        "Folders",IDC_STATIC,14,14,474,196
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -91,20 +114,30 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 55
     END
+
+    IDD_SELECT_DIRECTORIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 502
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 238
+    END
 END
 #endif    // APSTUDIO_INVOKED
+
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
 //
 // TEXTINCLUDE
 //
-1 TEXTINCLUDE
+
+1 TEXTINCLUDE 
 BEGIN
     "resource.h\0"
 END
 
-2 TEXTINCLUDE
+2 TEXTINCLUDE 
 BEGIN
     "#ifndef APSTUDIO_INVOKED\r\n"
     "#include ""targetver.h""\r\n"
@@ -115,13 +148,63 @@ BEGIN
     "\0"
 END
 
-3 TEXTINCLUDE
+3 TEXTINCLUDE 
 BEGIN
     "\r\n"
     "\0"
 END
 
 #endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_CLOSED              BITMAP                  "C:\\Users\\rmeadows\\Source\\Repos\\WinDirStatReborn\\AsDesktopApp\\bitmap1.bmp"
+
+IDB_OPEN                BITMAP                  "bitmap2.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "TomCat007 Productions"
+            VALUE "FileDescription", "WinDirStatReborn AsDesktopApp"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "AsDeskto.exe"
+            VALUE "LegalCopyright", "Copyright (C) TomCat007 Productions 2018"
+            VALUE "OriginalFilename", "AsDeskto.exe"
+            VALUE "ProductName", "WinDirStatReborn AsDesktopApp"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -130,11 +213,11 @@ END
 
 STRINGTABLE
 BEGIN
-   IDC_ASDESKTOPAPP   "ASDESKTOPAPP"
-   IDS_APP_TITLE       "AsDesktopApp"
+    IDS_APP_TITLE           "AsDesktopApp"
+    IDC_ASDESKTOPAPP        "ASDESKTOPAPP"
 END
 
-#endif
+#endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
@@ -145,5 +228,7 @@ END
 // Generated from the TEXTINCLUDE 3 resource.
 //
 
+
 /////////////////////////////////////////////////////////////////////////////
 #endif    // not APSTUDIO_INVOKED
+

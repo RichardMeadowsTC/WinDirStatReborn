@@ -11,10 +11,26 @@
 // Windows Header Files:
 #include <windows.h>
 
+// Common controls
+#include <commctrl.h>
+
+// Shell
+#include <shellapi.h>
+#include <shlobj.h>
+#include <atlbase.h>
+
+// stdlib
+#include <list>
+#include <string>
+#include <map>
+#include <set>
+
 // C RunTime Header Files
+#include <process.h>
 #include <stdlib.h>
 #include <malloc.h>
 #include <memory.h>
+#include <strsafe.h>
 #include <tchar.h>
 
 
