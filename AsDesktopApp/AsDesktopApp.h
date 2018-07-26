@@ -2,7 +2,8 @@
 
 #include "resource.h"
 #define WMU_TREE_SORT           WM_USER + 1
-#define WMU_WORKER_FINISHED     WM_USER + 2
+#define WMU_UPDATE_TREE_ITEM    WM_USER + 2
+#define WMU_WORKER_FINISHED     WM_USER + 3
 
 typedef struct tagDirectoryDrawTextItems
 {

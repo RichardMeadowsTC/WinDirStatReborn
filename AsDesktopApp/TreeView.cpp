@@ -56,6 +56,13 @@ LRESULT CALLBACK TreeViewWndProc(HWND hWnd, UINT msg,
             pTV->RepaintSizeStats(pData->hTreeItem);
         }
         break;
+        case WMU_UPDATE_TREE_ITEM:
+        {
+            TreeView *pTV = (TreeView *)dwRefData;
+            HTREEITEM hTreeItem = reinterpret_cast<HTREEITEM>(lParam);
+            pTV->RepaintSizeStats(hTreeItem);
+        }
+        break;
         case WMU_WORKER_FINISHED:
         {
             TreeView *pTV = (TreeView *)dwRefData;

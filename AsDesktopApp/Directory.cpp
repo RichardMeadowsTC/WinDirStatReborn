@@ -138,6 +138,7 @@ void Directory::AddFolderSize(LPCWSTR szName, size_t Size)
 {
     m_FolderSizes[szName] = Size;
     m_FolderBytes += Size;
+    SendMessage(m_hwndTree, WMU_UPDATE_TREE_ITEM, 0, reinterpret_cast<LPARAM>(m_hTreeItem));
 }
 
 void Directory::DoubleCheckFolderSizes()
